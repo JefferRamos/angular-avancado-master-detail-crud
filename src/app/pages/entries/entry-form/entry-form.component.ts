@@ -104,7 +104,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
       id: [null],
       name: [null, [Validators.required, Validators.minLength(2)]],
       description: [null],
-      type: ["expense", [Validators.required]],
+      type: ['expense', [Validators.required]],
       amount: [null, [Validators.required]],
       date: [null, [Validators.required]],
       paid: [true, [Validators.required]],
@@ -132,7 +132,7 @@ export class EntryFormComponent implements OnInit, AfterContentChecked {
     if (this.currentAction === 'new') {
       this.pageTitle = 'Cadastro de Novo Lançamento';
     } else {
-      const entryName = this.entry.nome || '';
+      const entryName = this.entry.name || '';
       this.pageTitle = 'Editando Lançamento: ' + entryName;
     }
   }

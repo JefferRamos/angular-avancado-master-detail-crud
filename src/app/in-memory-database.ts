@@ -17,7 +17,7 @@ export class InMemoryDatabase implements InMemoryDbService {
     const entries: Entry[] = [
       {
         id: 1,
-        nome: 'Gás de Cozinha',
+        name: 'Gás de Cozinha',
         categoryId: categories[0].id,
         category: categories[0],
         paid: true,
@@ -25,11 +25,11 @@ export class InMemoryDatabase implements InMemoryDbService {
         amount: '70,80',
         type: 'expense',
         description: 'Qualquer descrição para essa despesa'
-      } as Entry,
+      } as unknown as Entry,
 
       {
         id: 2,
-        nome: 'Suplementos',
+        name: 'Suplementos',
         categoryId: categories[1].id,
         category: categories[1],
         paid: false,
@@ -40,7 +40,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 3,
-        nome: 'Salário na Empresa X',
+        name: 'Salário na Empresa X',
         categoryId: categories[3].id,
         category: categories[3],
         paid: true,
@@ -51,7 +51,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 4,
-        nome: 'Aluguel de Filme',
+        name: 'Aluguel de Filme',
         categoryId: categories[2].id,
         category: categories[2],
         paid: true,
@@ -62,7 +62,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 5,
-        nome: 'Suplementos',
+        name: 'Suplementos',
         categoryId: categories[1].id,
         category: categories[1],
         paid: false,
@@ -73,7 +73,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 6,
-        nome: 'Video Game da filha',
+        name: 'Video Game da filha',
         categoryId: categories[2].id,
         category: categories[2],
         paid: true,
@@ -84,7 +84,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 7,
-        nome: 'Uber',
+        name: 'Uber',
         categoryId: categories[1].id,
         category: categories[1],
         paid: false,
@@ -95,7 +95,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 8,
-        nome: 'Aluguel',
+        name: 'Aluguel',
         categoryId: categories[2].id,
         category: categories[2],
         paid: true,
@@ -106,7 +106,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 9,
-        nome: 'Gás de Cozinha',
+        name: 'Gás de Cozinha',
         categoryId: categories[1].id,
         category: categories[1],
         paid: true,
@@ -117,7 +117,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 10,
-        nome: 'Pagamento pelo Projeto XYZ',
+        name: 'Pagamento pelo Projeto XYZ',
         categoryId: categories[4].id,
         category: categories[4],
         paid: true,
@@ -128,7 +128,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 11,
-        nome: 'Aluguel de Filme',
+        name: 'Aluguel de Filme',
         categoryId: categories[2].id,
         category: categories[2],
         paid: true,
@@ -139,7 +139,7 @@ export class InMemoryDatabase implements InMemoryDbService {
 
       {
         id: 12,
-        nome: 'Cinema',
+        name: 'Cinema',
         categoryId: categories[2].id,
         category: categories[2],
         paid: true,
