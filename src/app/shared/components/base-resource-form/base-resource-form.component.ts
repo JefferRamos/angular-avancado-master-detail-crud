@@ -19,7 +19,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
 
   private route: ActivatedRoute;
   private router: Router;
-  private formBuilder: FormBuilder;
+  protected formBuilder: FormBuilder;
 
   constructor(
     protected injector: Injector,
