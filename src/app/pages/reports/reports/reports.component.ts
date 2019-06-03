@@ -19,8 +19,8 @@ export class ReportsComponent implements OnInit {
   revenueTotal: any = 0;
   balance: any = 0;
 
-  revenueChartData: any;
   expenseChartData: any;
+  revenueChartData: any;
 
   chartOptions = {
     scales: {
@@ -46,8 +46,8 @@ export class ReportsComponent implements OnInit {
   }
 
   generateReports() {
-    const month = this.month.nativeElement.value;
-    const year = this.year.nativeElement.value;
+    const month = parseInt(this.month.nativeElement.value, 10);
+    const year = parseInt(this.year.nativeElement.value, 10);
 
     if (!month || !year) {
       alert('Você precisa selecionar o Mês e o Ano para gerar os relatórios');
@@ -57,6 +57,7 @@ export class ReportsComponent implements OnInit {
   }
 
   private setValues(entries: Entry[]) {
+    console.log(entries);
     this.entries = entries;
     this.calculateBalance();
     this.setChartData();
@@ -68,15 +69,15 @@ export class ReportsComponent implements OnInit {
 
     this.entries.forEach(entry => {
       if (entry.type === 'revenue') {
-        revenueTotal += currencyFormatter.unformat(entry.amount, {code: 'BRL'});
+        revenueTotal += currencyFormatter.unformat(entry.amount, { code: 'BRL' });
       } else {
-        expenseTotal += currencyFormatter.unformat(entry.amount, {code: 'BRL'});
+        expenseTotal += currencyFormatter.unformat(entry.amount, { code: 'BRL' });
       }
     });
 
-    this.expenseTotal = currencyFormatter.format(expenseTotal, {code: 'BRL'});
-    this.revenueTotal = currencyFormatter.format(revenueTotal, {code: 'BRL'});
-    this.balance = currencyFormatter.format(revenueTotal - expenseTotal, {code: 'BRL'});
+    this.expenseTotal = currencyFormatter.format(expenseTotal, { code: 'BRL' });
+    this.revenueTotal = currencyFormatter.format(revenueTotal, { code: 'BRL' });
+    this.balance = currencyFormatter.format(revenueTotal - expenseTotal, { code: 'BRL' });
   }
 
   private setChartData() {
@@ -96,7 +97,7 @@ export class ReportsComponent implements OnInit {
       // if found entries, them sum entries amount and add to chartData
       if (filteredEntries.length > 0) {
         const totalAmount = filteredEntries.reduce(
-          (total, entry) => total + currencyFormatter.unformat(entry.amount, {code: 'BRL'}), 0
+          (total, entry) => total + currencyFormatter.unformat(entry.amount, { code: 'BRL' }), 0
         );
 
         chartData.push({

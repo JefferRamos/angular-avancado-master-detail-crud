@@ -7,9 +7,7 @@ import { BaseResourceService } from '../../../shared/services/base-resource.serv
 import { CategoryService } from '../../categories/shared/category.service';
 import { Entry } from './entry.model';
 
-
 import * as moment from 'moment';
-
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +15,7 @@ import * as moment from 'moment';
 
 export class EntryService extends BaseResourceService<Entry> {
 
-  constructor(protected injector: Injector, private categoryservice: CategoryService) {
+  constructor(protected injector: Injector, private categoryService: CategoryService) {
     super('api/entries', injector, Entry.fromJson);
   }
 
@@ -36,7 +34,7 @@ export class EntryService extends BaseResourceService<Entry> {
   }
 
   private setCategoryAndSendToServer(entry: Entry, sendFn: any): Observable<Entry> {
-    return this.categoryservice.getById(entry.categoryId).pipe(
+    return this.categoryService.getById(entry.categoryId).pipe(
       flatMap(category => {
         entry.category = category;
 
